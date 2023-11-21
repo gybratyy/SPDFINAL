@@ -1,0 +1,38 @@
+1 Task.java
+2 Task Manager
+3 File handler
+4 TaskCommandInterface
+5 ADD DELETEMODIFY MARKASDONE
+6 TaskObserver
+7 NotificationChain
+8 SMS,EMAIL
+
+
+main:
+both oveservers must be created fline 1,2
+set up notification chain 3,4
+
+create task manager 5
+
+setup nextchain in notification chain 6
+register ov=bserver 7
+
+create task1
+add task1 to manager
+notify observers
+
+display all currently available tasks(to make sure task is created)
+
+create task2, without status, to show that task is customizable(it can be either later through markasdone() method or left with out nathing with default value(false)
+add task2 to manager
+notify
+
+display corrent tasks
+
+manager.modifyTask(1); get user input and set new String to thew value of task1
+
+display
+
+  manager.markTaskAsDone(2);  mark task2 as done, display task
+
+

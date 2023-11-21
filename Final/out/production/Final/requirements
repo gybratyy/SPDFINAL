@@ -1,0 +1,65 @@
+Task specification
+You are developing a task planner solution in Java which is used to create and assign tasks.
+
+First.
+Task Creation (Builder and Command Patterns): Design a mechanism for creating tasks using the Builder pattern.
+Implement a Command pattern to encapsulate task creation and assignment actions, allowing for easy undo/redo functionality.
+
+Second.
+Notification System (Observer and Chain of Responsibility Patterns):
+Create a notification module using the Observer pattern to notify users of task updates.
+Implement the Chain of Responsibility pattern to allow users to customize their notification preferences.
+
+You may make any assumptions that do not contradict provided specification.
+It is acceptable to have a black screen as an interface, given that all notifications are readable by users for demonstration proposes.
+Clearly state all assumptions in the text of the report.
+
+
+Grading scheme
+Grading criteria
+Knowledge and application of software design patterns	60
+Presentation quality and handling questions during defense	30
+Code implementation logic	10
+
+
+
+Task class (Task.java):
+
+This class represents a task and should have attributes like task ID, description, status (done or not), etc.
+Use the Builder pattern to create tasks with a fluent interface for setting attributes.
+TaskBuilder class (TaskBuilder.java):
+
+This class should implement the Builder pattern for creating Task objects.
+It should have methods for setting each attribute of the task.
+TaskCommand interface (TaskCommand.java):
+
+Define a command interface with methods like execute, undo, and redo for performing operations on tasks.
+ConcreteCommand classes (AddTaskCommand.java, DeleteTaskCommand.java, MarkDoneCommand.java, ModifyTaskCommand.java):
+
+Implement the TaskCommand interface for each type of operation on tasks.
+TaskManager class (TaskManager.java):
+
+This class acts as the invoker in the Command pattern.
+It should maintain a list of commands and execute them when needed.
+TaskObserver interface (TaskObserver.java):
+
+Define an observer interface with an update method for receiving task update notifications.
+ConcreteObserver classes (EmailNotificationObserver.java, SMSNotificationObserver.java, LogNotificationObserver.java):
+
+Implement the TaskObserver interface for different types of notification observers.
+NotificationChain class (NotificationChain.java):
+
+Implement the Chain of Responsibility pattern to handle notification preferences.
+This class should have a reference to the next handler in the chain.
+TaskFileHandler class (TaskFileHandler.java):
+
+Implement this class to handle reading and writing tasks to a JSON file.
+Use libraries like Jackson for JSON processing.
+Main class (Main.java):
+
+Instantiate and connect all the components.
+Create tasks using the TaskBuilder.
+Create command objects for different operations.
+Register observers for tasks.
+Set up the notification chain.
+Manage tasks using the TaskManager.
